@@ -5,7 +5,7 @@ pipeline {
 
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/lalkrishna24/jenkins-cicd-demo.git'
+                git branch: 'main', url: 'https://github.com/lalkrishna24/jenkins-cicd-demo.git'
             }
         }
 
@@ -17,7 +17,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh 'sudo cp index.html /var/www/html/'
+                sh 'cp index.html /var/www/html/'
             }
         }
     }
